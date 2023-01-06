@@ -11,6 +11,160 @@ We introduce a method for discovering truth-like features directly from model ac
 ## Abstract
 > Existing techniques for training language models can be misaligned with the truth: if we train models with imitation learning, they may reproduce errors that humans make; if we train them to generate text that humans rate highly, they may output errors that human evaluators can't detect. We propose circumventing this issue by directly finding latent knowledge inside the internal activations of a language model in a purely unsupervised way. Specifically, we introduce a method for accurately answering yes-no questions given only unlabeled model activations. It works by finding a direction in activation space that satisfies logical consistency properties, such as that a statement and its negation have opposite truth values. We show that despite using no supervision and no model outputs, our method can recover diverse knowledge represented in large language models: across 6 models and 10 question-answering datasets, it outperforms zero-shot accuracy by 4\% on average. We also find that it cuts prompt sensitivity in half and continues to maintain high accuracy even when models are prompted to generate incorrect answers. Our results provide an initial step toward discovering what language models know, distinct from what they say, even when we don't have access to explicit ground truth labels.
 
+
+## Datasets prompts
+Accordind to the paper, several dataset were used to evaluate the CCS method. For each of the dataset, several variety of prompts were generated via the use of the library `promptsource`.
+
+Here some details about all the prompt of IMDB dataset to get a better understanding (more about the other dataset in [dataset documentation](./docs/dataset.md))
+
+### IMDB dataset
+There is 11 prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:** Movie Expressed Sentiment
+    * **Jinja template:**:
+      * input: `{{text}} The sentiment expressed for the movie is`
+      * output: `{{ answer_choices [label] }}` (where label is either `positive` or `negative`)
+    * **example:**
+      * Input
+        ```
+        I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first released in 1967. I also heard [...] Swedish cinema. But really, this film doesn't have much of a plot.
+        The sentiment expressed for the movie is
+        ```
+      * Target
+        ```
+        negative
+        ```
+2. **name:** Movie Expressed Sentiment 2
+    * **Jinja template:**:
+      * input: `The following movie review expresses what sentiment? {{text}}`
+      * output: `{{ answer_choices [label] }}` (where label is either `positive` or `negative`)
+    * **example:**
+      * Input
+        ```
+        The following movie review expresses what sentiment? OK its not the best film I've ever seen but at the same time [...] if your after cheap laughs and you see it in pound land go by it.
+        ```
+      * Target
+        ```
+        negative
+        ```
+3. **name:** Negation template for positive and negative
+    * **Jinja template:**:
+      * input: `{{text}} This is definitely not a`
+      * output: `{{ answer_choices [1-label]}} review.` (where label is either `positive` or `negative`)
+    * **example:**
+      * Input
+        ```
+        If only to avoid making this type of film in the future. This film is interesting as [...] spend one's time staring out a window at a tree growing.<br /><br /> This is definitely not a
+        ```
+      * Target
+        ```
+        positive review.
+        ```
+4. **name:** Reviewer Enjoyment
+    * **Jinja template:**:
+      * input: `{{text}} How does the reviewer feel about the movie?`
+      * output: `{{ answer_choices [label] }}` (where label is either `They didn't like it!` or `They loved it`)
+    * **example:**
+      * Input
+        ```
+        "I Am Curious: Yellow" is a risible and pretentious steaming pile. It doesn't matter what one's political views are because this film can [...] culturally with the insides of women's bodies. How does the reviewer feel about the movie?
+        ```
+      * Target
+        ```
+        They didn't like it!
+        ```
+5. **name:** Reviewer Enjoyment Yes No
+    * **Jinja template:**:
+      * input: `{{text}} Did the reviewer enjoy the movie?`
+      * output: `{{ answer_choices [label] }}` (where label is either `No` or `Yes`)
+    * **example:**
+      * Input
+        ```
+        I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first released in 1967. I also [...] to study the meat and potatoes (no pun intended) of Swedish cinema. But really, this film doesn't have much of a plot. Did the reviewer enjoy the movie?
+        ```
+      * Target
+        ```
+        No
+        ```
+6. **name:** Reviewer Expressed Sentiment
+    * **Jinja template:**:
+      * input: `{{text}} What is the sentiment expressed by the reviewer for the movie?`
+      * output: `{{ answer_choices [label] }}` (where label is either `negative` or `positive`)
+    * **example:**
+      * Input
+        ```
+        This film was probably inspired by Godard's Masculin, féminin and I urge you to see that film instead.<br /><br />The film has two strong [...] A movie of its time, and place. 2/10. What is the sentiment expressed by the reviewer for the movie?
+        ```
+      * Target
+        ```
+        ...
+        ```
+7. **name:** Reviewer Opinion bad good choices
+    * **Jinja template:**:
+      * input: `{{text}} Did the reviewer find this movie {{"good or bad"}}?`
+      * output: `{{ answer_choices [label] }}` (where label is either `bad` or `good`)
+    * **example:**
+      * Input
+        ```
+        "I Am Curious: Yellow" is a risible and pretentious steaming pile. It doesn't matter what one's political views are because this film can [...] culturally with the insides of women's bodies. Did the reviewer find this movie good or bad?
+        ```
+      * Target
+        ```
+        bad
+        ```
+8. **name:** Reviewer Sentiment Feeling
+    * **Jinja template:**:
+      * input: ``
+      * output: `...` (where label is either `...` or `...`)
+    * **example:**
+      * Input
+        ```
+        ...
+        ```
+      * Target
+        ```
+        ...
+        ```
+9. **name:** Sentiment with choices
+    * **Jinja template:**:
+      * input: ``
+      * output: `...` (where label is either `...` or `...`)
+    * **example:**
+      * Input
+        ```
+        ...
+        ```
+      * Target
+        ```
+        ...
+        ```
+10. **name:** Text Expressed Sentiment
+    * **Jinja template:**:
+      * input: ``
+      * output: `...` (where label is either `...` or `...`)
+    * **example:**
+      * Input
+        ```
+        ...
+        ```
+      * Target
+        ```
+        ...
+        ```
+11. **name:** Writer Expressed Sentiment
+    * **Jinja template:**:
+      * input: ``
+      * output: `...` (where label is either `...` or `...`)
+    * **example:**
+      * Input
+        ```
+        ...
+        ```
+      * Target
+        ```
+        ...
+        ```
+
+
 ## Code
 
 We provide three options for code:
