@@ -5,16 +5,18 @@ Here we go in detailled in the processes about datasets used in the paper *Disco
 
 ## Datasets used
 Burns *et al.* used 10 datasets to perform tests on the caption of model belief of the truthness concept:
-1. [imdb](link) [dataset](https://huggingface.co/datasets/imdb),
-2. [Amazon polarity](link) [dataset](https://huggingface.co/datasets/amazon_polarity),
-3. [AG-News](link) [dataset](https://huggingface.co/datasets/ag_news),
-4. [DBpedia-14](link) [dataset](https://huggingface.co/datasets/dbpedia_14),
-5. [NLI-RTE](link) dataset (which is Glue subset: [RTE subset](https://huggingface.co/datasets/glue/viewer/rte/test)),
-6. [QNLI](link) (which is a GLUE subset [sub dataset](https://huggingface.co/datasets/glue/viewer/qnli/test)),
-7. [COPA](https://people.ict.usc.edu/~gordon/copa.html) dataset (curated versions can be found on huggingface: [COPA_nli](https://huggingface.co/datasets/pietrolesci/copa_nli)),
-8. [Story-Cloze]([link](https://cs.rochester.edu/nlp/rocstories/)) [dataset](https://huggingface.co/datasets/story_cloze),
-9. [BoolQ](link) [dataset](https://huggingface.co/datasets/boolq),
-10. [PIQA](link) [dataset]().
+1. [**IMDB**](link) [dataset](https://huggingface.co/datasets/imdb),
+2. [**Amazon polarity**](link) [dataset](https://huggingface.co/datasets/amazon_polarity),
+3. [**AG-News**](link) [dataset](https://huggingface.co/datasets/ag_news),
+4. [**DBpedia-14**](link) [dataset](https://huggingface.co/datasets/dbpedia_14),
+5. **NLI-RTE** (subset of [**GLUE**](https://gluebenchmark.com/)) dataset ([RTE subset](https://huggingface.co/datasets/glue/viewer/rte/test)),
+    > *when looking for the homage, we are reaching this [page](https://aclweb.org/aclwiki/Recognizing_Textual_Entailment) a page on ACLweb (Association for Computational Linguistics)*
+6. **QNLI** (subset of [**GLUE**](https://gluebenchmark.com/)) dataset ([QNLI subset](https://huggingface.co/datasets/glue/viewer/qnli/test))
+    > *when looking for the homepage, we are reaching [SQuAD2.0](https://rajpurkar.github.io/SQuAD-explorer/) page*,
+7. [**COPA**](https://people.ict.usc.edu/~gordon/copa.html) dataset (curated versions can be found on huggingface: [COPA_nli](https://huggingface.co/datasets/pietrolesci/copa_nli)),
+8. [**Story-Cloze**](https://cs.rochester.edu/nlp/rocstories/) [dataset](https://huggingface.co/datasets/story_cloze),
+9. [**BoolQ**](https://github.com/google-research-datasets/boolean-questions) [dataset](https://huggingface.co/datasets/boolq),
+10. [**PIQA**](https://yonatanbisk.com/piqa/) [dataset](https://huggingface.co/datasets/piqa).
 
 Here some detailled about each datasets:
 
