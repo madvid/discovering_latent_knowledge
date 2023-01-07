@@ -5,8 +5,8 @@ Here we go in detailled in the processes about datasets used in the paper *Disco
 
 ## Datasets used
 Burns *et al.* used 10 datasets to perform tests on the caption of model belief of the truthness concept:
-1. [**IMDB**](link) [dataset](https://huggingface.co/datasets/imdb),
-2. [**Amazon polarity**](link) [dataset](https://huggingface.co/datasets/amazon_polarity),
+1. [**IMDB**](http://ai.stanford.edu/~amaas/data/sentiment/) [dataset](https://huggingface.co/datasets/imdb),
+2. [**Amazon polarity**](https://docs.fast.ai/data.external.html#datasets) [dataset](https://huggingface.co/datasets/amazon_polarity),
 3. [**AG-News**](link) [dataset](https://huggingface.co/datasets/ag_news),
 4. [**DBpedia-14**](link) [dataset](https://huggingface.co/datasets/dbpedia_14),
 5. **NLI-RTE** (subset of [**GLUE**](https://gluebenchmark.com/)) dataset ([RTE subset](https://huggingface.co/datasets/glue/viewer/rte/test)),
