@@ -5,19 +5,22 @@ Here we go in detailled in the processes about datasets used in the paper *Disco
 
 ## Datasets used
 Burns *et al.* used 10 datasets to perform tests on the caption of model belief of the truthness concept:
-1. [imdb](link) dataset,
-2. [Amazon policy](link) dataset,
-3. [AG-News](link) dataset,
-4. [DBpedia-14](link) dataset,
-5. [NLI-RTE](link) dataset,
-6. [QNLI](link) dataset,
-7. [COPA](link) dataset,
-8. [Story-Cloze](link) dataset,
-9. [BoolQ](link) dataset,
-10. [PIQA](link) dataset.
+1. [imdb](link) [dataset](https://huggingface.co/datasets/imdb),
+2. [Amazon polarity](link) [dataset](https://huggingface.co/datasets/amazon_polarity),
+3. [AG-News](link) [dataset](https://huggingface.co/datasets/ag_news),
+4. [DBpedia-14](link) [dataset](https://huggingface.co/datasets/dbpedia_14),
+5. [NLI-RTE](link) dataset (which is Glue subset: [RTE subset](https://huggingface.co/datasets/glue/viewer/rte/test)),
+6. [QNLI](link) (which is a GLUE subset [sub dataset](https://huggingface.co/datasets/glue/viewer/qnli/test)),
+7. [COPA]([link](https://people.ict.usc.edu/~gordon/copa.html)) dataset (curated versions can be found on huggingface: [COPA_nli](https://huggingface.co/datasets/pietrolesci/copa_nli)),
+8. [Story-Cloze]([link](https://cs.rochester.edu/nlp/rocstories/)) [dataset](https://huggingface.co/datasets/story_cloze),
+9. [BoolQ](link) [dataset](https://huggingface.co/datasets/boolq),
+10. [PIQA](link) [dataset]().
 
 Here some detailled about each datasets:
 
+
+## Multiple shade of prompt
+In this section we detailled all the different prompt of each dataset used by Burns *et. al.* during their experiments.
 ### IMDB dataset
 At the time these lines are written, there is 11 prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
 1. **name:** Movie Expressed Sentiment
@@ -171,7 +174,7 @@ At the time these lines are written, there is 11 prompts available, for each pro
         negative
         ```
 
-### Amazon policy dataset
+### Amazon polarity dataset
 At the time these lines are written, there is 9 prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
 1. **name:**: Is_this_review
   * **Jinja template:**:
@@ -387,28 +390,156 @@ At the time these lines are written, there is 9 prompts available, for each prom
     ```
 
 ### AG-News dataset
-lorem ipsum
+At the time these lines are written, there is 7 prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### DBpedia-14 dataset
-lorem ipsum
+At the time these lines are written, there is 4 prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### NLI dataset - subset RTE
-lorem ipsum
+At the time these lines are written, there is x prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### QNLI dataset 
-lorem ipsum
+At the time these lines are written, there is x prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### COPA dataset
-lorem ipsum
+COPA dataset is not available in `promptsource`. The curation was made by the author of DLK himself. To keep a consistency in the prompt variety presentation the prompt is presented in an identical format that one would find it in promptsource:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### Story-Cloze dataset
-lorem ipsum
+Also not in promptesource library, Bruns *et. al.* used 9 prompts (6 from Sanh *et. al.* [[3]](#3) plus 3 handcrafted). Each prompt is given following the same template as we did until now:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### BoolQ dataset
-lorem ipsum
+At the time these lines are written, there is x prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 ### PIQA dataset
-lorem ipsum
+At the time these lines are written, there is x prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+1. **name:**: ...
+  * **Jinja template:**:
+    * input:
+      ```
+      ...
+      ```
+    * output: `...` (where label is either `...` or `...`)
+  * **example:**
+    * Input
+      ```
+      ...
+      ```
+    * Target
+      ```
+      ...
+      ```
 
 
 
@@ -419,14 +550,57 @@ The authors use [promptsource library](https://github.com/bigscience-workshop/pr
 
 
 ## References
-<a id="1">[1]</a> 
-Burns, Collin and Ye, Haotian and Klein, Dan and Steinhardt, Jacob, *Discovering Latent Knowledge in Language Models Without Supervision*, ArXiV, **2022**.
-
+* <a id="1">[1]</a> 
+C. Burns, H. Ye, D. Klein and  J. Steinhardt, *Discovering Latent Knowledge in Language Models Without Supervision*, [ArXiV](https://arxiv.org/abs/2212.03827), **2022**.
+* <a id="2">[2]</a> 
+A. Wang, A. Singh and J. Michael, F. Hill and O. Levy and S. R. Bowman, *GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding*, [ArXiV](https://arxiv.org/abs/1804.07461), **2019**.
+*  <a id="3">[3]</a> 
+V. Sanh, A. Webson, C. Raffel, S. H. Bach, L. Sutawika, Z. Alyafeai, A. Chaffin, A. Stiegler, T. L. Scao, A. Raja, M. Dey, M. S. Bari, C. Xu, U. Thakker, S. S. Sharma, E. Szczechla, T. Kim, G. Chhablani, N. Nayak, D. Datta, J. Chang, M. T-J Jiang, H. Wang, M. Manica, S. Shen, Z. X. Yong, H. Pandey, R. Bawden,  T. Wang, T. Neeraj, J. Rozen, A. Sharma, A. Santilli, T. Fevry, J. A. Fries, R. Teehan, T. Bers, S. Biderman, L. Gao, T. Wolf and A. M. Rush, *Multitask Prompted Training Enables Zero-Shot Task Generalization*, [ArXiV](https://arxiv.org/abs/2110.08207), **2021**.
 <!---
+*Discovering Latent Knowledge in Language Models Without Supervision*
 @article{burns2022dl,
   title={Discovering Latent Knowledge in Language Models Without Supervision},
   author={Burns, Collin and Ye, Haotian and Klein, Dan and Steinhardt, Jacob},
   journal={ArXiV},
   year={2022}
 }
+/======================================================================/
+*GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding*
+@misc{wang2019glue,
+      title={GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding}, 
+      author={Alex Wang and Amanpreet Singh and Julian Michael and Felix Hill and Omer Levy and Samuel R. Bowman},
+      year={2019},
+      eprint={1804.07461},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+/======================================================================/
+*Multitask Prompted Training Enables Zero-Shot Task Generalization*
+@misc{https://doi.org/10.48550/arxiv.2110.08207,
+  doi = {10.48550/ARXIV.2110.08207},
+  
+  url = {https://arxiv.org/abs/2110.08207},
+  
+  author = {Sanh, Victor and Webson, Albert and Raffel, Colin and Bach, Stephen H. and Sutawika, Lintang and Alyafeai, Zaid and Chaffin, Antoine and Stiegler, Arnaud and Scao, Teven Le and Raja, Arun and Dey, Manan and Bari, M Saiful and Xu, Canwen and Thakker, Urmish and Sharma, Shanya Sharma and Szczechla, Eliza and Kim, Taewoon and Chhablani, Gunjan and Nayak, Nihal and Datta, Debajyoti and Chang, Jonathan and Jiang, Mike Tian-Jian and Wang, Han and Manica, Matteo and Shen, Sheng and Yong, Zheng Xin and Pandey, Harshit and Bawden, Rachel and Wang, Thomas and Neeraj, Trishala and Rozen, Jos and Sharma, Abheesht and Santilli, Andrea and Fevry, Thibault and Fries, Jason Alan and Teehan, Ryan and Bers, Tali and Biderman, Stella and Gao, Leo and Wolf, Thomas and Rush, Alexander M.},
+  
+  keywords = {Machine Learning (cs.LG), Computation and Language (cs.CL), FOS: Computer and information sciences, FOS: Computer and information sciences},
+  
+  title = {Multitask Prompted Training Enables Zero-Shot Task Generalization},
+  
+  publisher = {arXiv},
+  
+  year = {2021},
+  
+  copyright = {Creative Commons Attribution 4.0 International}
+}
+/======================================================================/
+
+/======================================================================/
+
+/======================================================================/
+
+/======================================================================/
+
+/======================================================================/
+
 -->
