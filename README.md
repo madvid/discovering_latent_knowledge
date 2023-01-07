@@ -15,10 +15,9 @@ We introduce a method for discovering truth-like features directly from model ac
 ## Datasets prompts
 Accordind to the paper, several dataset were used to evaluate the CCS method. For each of the dataset, several variety of prompts were generated via the use of the library `promptsource`.
 
-Here some details about all the prompt of IMDB dataset to get a better understanding (more about the other dataset in [dataset documentation](./docs/dataset.md))
+Just as an example we show below few prompts associated with the IMDB dataset. For a more detail description about the different dataset and prompt please read the dedicated [dataset documentation](./docs/dataset.md))
 
-### IMDB dataset
-There is 11 prompts available, for each prompt, the name from promptsource is given plus the Jinja template and an example:
+3 prompts examples for IMDB dataset:
 1. **name:** Movie Expressed Sentiment
     * **Jinja template:**:
       * input: `{{text}} The sentiment expressed for the movie is`
@@ -59,112 +58,6 @@ There is 11 prompts available, for each prompt, the name from promptsource is gi
         ```
         positive review.
         ```
-4. **name:** Reviewer Enjoyment
-    * **Jinja template:**:
-      * input: `{{text}} How does the reviewer feel about the movie?`
-      * output: `{{ answer_choices [label] }}` (where label is either `They didn't like it!` or `They loved it`)
-    * **example:**
-      * Input
-        ```
-        "I Am Curious: Yellow" is a risible and pretentious steaming pile. It doesn't matter what one's political views are because this film can [...] culturally with the insides of women's bodies. How does the reviewer feel about the movie?
-        ```
-      * Target
-        ```
-        They didn't like it!
-        ```
-5. **name:** Reviewer Enjoyment Yes No
-    * **Jinja template:**:
-      * input: `{{text}} Did the reviewer enjoy the movie?`
-      * output: `{{ answer_choices [label] }}` (where label is either `No` or `Yes`)
-    * **example:**
-      * Input
-        ```
-        I rented I AM CURIOUS-YELLOW from my video store because of all the controversy that surrounded it when it was first released in 1967. I also [...] to study the meat and potatoes (no pun intended) of Swedish cinema. But really, this film doesn't have much of a plot. Did the reviewer enjoy the movie?
-        ```
-      * Target
-        ```
-        No
-        ```
-6. **name:** Reviewer Expressed Sentiment
-    * **Jinja template:**:
-      * input: `{{text}} What is the sentiment expressed by the reviewer for the movie?`
-      * output: `{{ answer_choices [label] }}` (where label is either `negative` or `positive`)
-    * **example:**
-      * Input
-        ```
-        This film was probably inspired by Godard's Masculin, féminin and I urge you to see that film instead.<br /><br />The film has two strong [...] A movie of its time, and place. 2/10. What is the sentiment expressed by the reviewer for the movie?
-        ```
-      * Target
-        ```
-        ...
-        ```
-7. **name:** Reviewer Opinion bad good choices
-    * **Jinja template:**:
-      * input: `{{text}} Did the reviewer find this movie {{"good or bad"}}?`
-      * output: `{{ answer_choices [label] }}` (where label is either `bad` or `good`)
-    * **example:**
-      * Input
-        ```
-        "I Am Curious: Yellow" is a risible and pretentious steaming pile. It doesn't matter what one's political views are because this film can [...] culturally with the insides of women's bodies. Did the reviewer find this movie good or bad?
-        ```
-      * Target
-        ```
-        bad
-        ```
-8. **name:** Reviewer Sentiment Feeling
-    * **Jinja template:**:
-      * input: ``
-      * output: `...` (where label is either `...` or `...`)
-    * **example:**
-      * Input
-        ```
-        ...
-        ```
-      * Target
-        ```
-        ...
-        ```
-9. **name:** Sentiment with choices
-    * **Jinja template:**:
-      * input: ``
-      * output: `...` (where label is either `...` or `...`)
-    * **example:**
-      * Input
-        ```
-        ...
-        ```
-      * Target
-        ```
-        ...
-        ```
-10. **name:** Text Expressed Sentiment
-    * **Jinja template:**:
-      * input: ``
-      * output: `...` (where label is either `...` or `...`)
-    * **example:**
-      * Input
-        ```
-        ...
-        ```
-      * Target
-        ```
-        ...
-        ```
-11. **name:** Writer Expressed Sentiment
-    * **Jinja template:**:
-      * input: ``
-      * output: `...` (where label is either `...` or `...`)
-    * **example:**
-      * Input
-        ```
-        ...
-        ```
-      * Target
-        ```
-        ...
-        ```
-
-
 ## Code
 
 We provide three options for code:
