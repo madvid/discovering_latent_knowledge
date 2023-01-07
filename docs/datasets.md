@@ -11,7 +11,7 @@ Burns *et al.* used 10 datasets to perform tests on the caption of model belief 
 4. [DBpedia-14](link) [dataset](https://huggingface.co/datasets/dbpedia_14),
 5. [NLI-RTE](link) dataset (which is Glue subset: [RTE subset](https://huggingface.co/datasets/glue/viewer/rte/test)),
 6. [QNLI](link) (which is a GLUE subset [sub dataset](https://huggingface.co/datasets/glue/viewer/qnli/test)),
-7. [COPA]([link](https://people.ict.usc.edu/~gordon/copa.html)) dataset (curated versions can be found on huggingface: [COPA_nli](https://huggingface.co/datasets/pietrolesci/copa_nli)),
+7. [COPA](https://people.ict.usc.edu/~gordon/copa.html) dataset (curated versions can be found on huggingface: [COPA_nli](https://huggingface.co/datasets/pietrolesci/copa_nli)),
 8. [Story-Cloze]([link](https://cs.rochester.edu/nlp/rocstories/)) [dataset](https://huggingface.co/datasets/story_cloze),
 9. [BoolQ](link) [dataset](https://huggingface.co/datasets/boolq),
 10. [PIQA](link) [dataset]().
